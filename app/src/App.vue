@@ -1,26 +1,22 @@
 <template>
   <div id="app">
+    <mu-appbar style="width: 100%;" color="primary" title="Maidenhead Grid Converter">
+    </mu-appbar>
+
     <mu-container>
-      <mu-form :model="form">
-        <mu-form-item>
-          <mu-button color="primary" @click="calculate">Calculate</mu-button>
-        </mu-form-item>
-      </mu-form>
+      <PageGridConv></PageGridConv>
     </mu-container>
   </div>
 </template>
 
 <script>
+  import PageGridConv from "./components/PageGridConv";
   export default {
     name: 'App',
+    components: {PageGridConv},
     data() {
       return {
-        form: {}
-      }
-    },
-    methods: {
-      calculate() {
-        this.$toast.message("hello world")
+        active_tab: 0,
       }
     }
   }
